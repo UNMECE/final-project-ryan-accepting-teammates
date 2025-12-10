@@ -298,16 +298,6 @@ void solveProblems(AcequiaManager& manager) {
 			}
 		}
 
-		// Send water from South (canalB) to North if North needs water and south has excess.
-		if ((north->isInDrought || northDeficit > 0) && southExcess > 0) {
-			double gap = std::min(southExcess, northDeficit);
-			double flow = chooseFlow(gap);
-			if (flow > 0.0) {
-				canalB->setFlowRate(flow);
-				canalB->toggleOpen(true);
-			}
-		}
-
 		// Send water from North (canalC) to East if East needs water and North has excess.
 		if ((east->isInDrought || eastDeficit > 0) && northExcess > 0) {
 			double gap = std::min(northExcess, eastDeficit);
