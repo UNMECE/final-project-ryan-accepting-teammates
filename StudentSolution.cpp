@@ -201,7 +201,7 @@ Region* findRegionByName(const std::vector<Region*>& regions, const std::string&
 	for (auto r : regions) { 					// Loop through the regions and
 		if (r->name == name) return r; 	// return region name to pointer r.
 	}
-	return nullptr; // If region is not found.
+	return nullptr; // If region is not found return nothing.
 }
 
 // Funciton to find excess water in region using r pointer established in function above.
